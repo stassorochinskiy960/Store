@@ -36,8 +36,8 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Lux</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Him</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -73,22 +73,22 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="" class="nav-item nav-link">Shop</a>
+                            <a href="/" class="nav-item nav-link ">Home</a> <! -- active -->
+                            <a href="{% url 'shop:product_list' %}" class="nav-item nav-link">Shop</a>
                             <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                         </div>
-                        <div class="cart">
-                        {% with total_items=cart|length %}
-                            {% if cart|length > 0 %}
-                                Your cart:
-                                <a href="{% url 'cart:cart_detail' %}">
-                                    {{ total_items }} item{{ total_items|pluralize }},
-                                    ${{ cart.get_total_price }}
-                                </a>
-                            {% else %}
-                                Your cart is empty.
-                            {% endif %}
-                        {% endwith %}
+                        <div class="" style="color:white"> <!-- cart -->
+                            {% with total_items=cart|length %}
+                                {% if cart|length > 0 %}
+                                    Ваша корзина:                  <!--Your cart-->
+                                    <a style="color:yellow" href="{% url 'cart:cart_detail' %}">
+                                        количество: {{ total_items }} {{ total_items|pluralize }},          <!--item-->
+                                        сумма: {{ cart.get_total_price }}
+                                    </a>
+                                {% else %}
+                                    Ваша корзина пуста.         <!--Your cart is empty.-->
+                                {% endif %}
+                            {% endwith %}
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
