@@ -8,9 +8,9 @@
 {% block container %}
     <div  class="col-lg-4 col-md-6 col-sm-6 pb-1" style="margin-left: auto; margin-right: auto;">
         <div class="h-100 bg-light p-30">
-            <h1>Checkout</h1>
+            <h1>Оформление</h1>
             <div class="order-info">
-                <h3>Your order</h3>
+                <h3>Ваш заказ</h3>
                 <ul>
                     {% for item in cart %}
                         <li>
@@ -19,11 +19,36 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <p>Total: ₴{{ cart.get_total_price }}</p>
+                <p>Всего: ₴{{ cart.get_total_price }}</p>
             </div>
-            <form action="." method="post" class="order-form">
-                {{ form.as_p }}
-                <p><input class="btn btn-primary px-3" type="submit" value="Place order"></p>
+            <form action="." method="post" > <!--form.as_p-->
+                <table>
+                    <tr>
+                        <td><p>Имя</p></td>
+                        <td>{{ form.first_name}}</td>
+                    </tr>
+                    <tr>
+                        <td><p>Фамилия</p></td>
+                        <td>{{ form.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <td><p>email</p></td>
+                        <td>{{ form.email}}</td>
+                    </tr>
+                    <tr>
+                        <td><p>Адресс</p></td>
+                        <td>{{ form.address}}</td>
+                    </tr>
+                    <tr>
+                        <td><p>Почтовый код </p></td>
+                        <td>{{ form.postal_code}}</td>
+                    </tr>
+                    <tr>
+                        <td><p>Город</p></td>
+                        <td>{{ form.city}}</td>
+                    </tr>
+                </table>
+                <p><input class="btn btn-primary px-3" type="submit" value="Оставить заказ"></p>
                 {% csrf_token %}
             </form>
         </div>
