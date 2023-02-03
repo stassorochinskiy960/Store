@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b%bw8yw7)=i+3j)wc$lc)*ia*pf=-6ee)z4u)pjko8zgyigd7j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -134,4 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
