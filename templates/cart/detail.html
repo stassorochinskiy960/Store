@@ -8,17 +8,14 @@
 {% block container %}
     <div  class="col-lg-4 col-md-6 col-sm-6 pb-1" style="margin-left: auto; margin-right: auto;">
         <div class="h-100 bg-light p-30">
-            <h1>Ваша корзина</h1>
+            <h1>Обрані івенти:</h1>
             <table class="cart" style="table-layout: auto; width: 100%;
                                         border-collapse: collapse;"><!--fixed-->
                 <thead>
                 <tr>
                     <th>Фото</th>
-                    <th>Имя</th>
-                    <th>Кол.</th>
-                    <th>Удалить</th>
-                    <th>Цена/шт.</th>
-                    <th>Цена</th>
+                    <th>Ім'я</th>
+                    <th>Видалити</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,29 +33,21 @@
                                 </a>
                             </td>
                             <td>{{ product.name }}</td>
-                            <td>{{ item.quantity }}</td>
-                            <td><a style="color:red" href="{% url 'cart:cart_remove' product.id%}">Удалить</a></td>
-                            <td class="num">₴{{ item.price }}</td>
-                            <td class="num">₴{{ item.total_price }}</td>
+                            <td><a style="color:red" href="{% url 'cart:cart_remove' product.id%}">Видалити</a></td>
                         </tr>
                     {% endwith %}
                 {% endfor %}
-                <tr class="total">
-                    <td colspan="4"></td>
-                    <td>Всего:</td>
-                    <td class="num">₴{{ cart.get_total_price }}</td>
-                </tr>
                 </tbody>
             </table>
             <p class="text-right" >
                 <a style="color: black;" href="{% url 'shop:product_list' %}" class="button light">
-                    <b>Продолжить покупки</b>
+                    <b>Обрати інші івенти</b>
                 </a>
                 <a href="">
                     <b style="color: black;">/</b>
                 </a>
                 <a style="color: black;" href="{% url 'orders:order_create' %}" class="button">
-                    <b>Оформить заказ</b>
+                    <b>Заповнити форму</b>
                 </a>
             </p>
         </div>

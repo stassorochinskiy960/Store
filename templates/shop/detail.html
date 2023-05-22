@@ -24,15 +24,16 @@
         <div class="h-100 bg-light p-30">
             <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.jpg' %}{% endif %}"
             style="width:100%; height:auto;">
-            <h3>{{ product.name }}</h3>
+            <h3 >{{ product.name }}</h3>
             <h5><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h5>
-            <h3 class="font-weight-semi-bold mb-4">₴{{ product.price }}</h3>
             <p class="mb-4">{{ product.description|linebreaks }}</p>
 
             <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                <p> Обрати кількість учасників вашої групи,
                 {{ cart_product_form }}
+                </p>
                 {% csrf_token %}
-                <input class="btn btn-primary px-3" type="submit" value="Добавить в корзину">
+                <input class="btn btn-primary px-3" type="submit" value="Заповнити форму">
             </form>
         </div>
     </div>

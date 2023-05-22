@@ -55,20 +55,17 @@
         </div>
 
         <div class="col-lg-9 col-md-8" style="margin-left: auto; margin-right: auto;">
-            <div class="row px-xl-5 pb-3">
+            <div class="row px-xl-5 pb-3" >
                 {% for product in products %}
-                    <div  class="col-lg-4 col-md-6 col-sm-6 pb-1" >
-                        <div class="product-item bg-light mb-4">
+                    <div  class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div class="product-item bg-light mb-4 " >
                             <div class="product-img position-relative overflow-hidden">
                                 <a href="{{ product.get_absolute_url }}">
                                     <img class="img-fluid w-100" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.jpg' %}{% endif %}">
                                 </a>
                             </div>
-                            <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    ₴{{ product.price }}
-                                </div>
+                            <div class="text-center py-4 " >
+                                <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}" ><p>{{ product.name }}</p></a><br>
                             </div>
                         </div>
                     </div>

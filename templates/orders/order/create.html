@@ -8,31 +8,26 @@
 {% block container %}
     <div  class="col-lg-4 col-md-6 col-sm-6 pb-1" style="margin-left: auto; margin-right: auto;">
         <div class="h-100 bg-light p-30">
-            <h1>Оформление</h1>
+            <h1>Оформлення</h1>
             <div class="order-info">
-                <h3>Ваш заказ</h3>
+                <h3>Ваша форма</h3>
                 <ul>
                     {% for item in cart %}
                         <li>
                             {{ item.quantity }}x {{ item.product.name }}
-                            <span>₴{{ item.total_price }}</span>
                         </li>
                     {% endfor %}
                 </ul>
-                <p>Всего: ₴{{ cart.get_total_price }}</p>
             </div>
             <form action="." method="post" > <!--form.as_p-->
                 <table>
                     <tr>
-                        <td><p>Имя</p></td>
+                        <td><p>Ім'я</p></td>
                         <td>{{ form.first_name}}</td>
                     </tr>
                     <tr>
-                        <td><p>Фамилия</p></td>
+                        <td><p>Фамілія</p></td>
                         <td>{{ form.last_name}}</td>
-                    </tr>
-                    <tr>
-                        <td><h6>Если у вас нет електроной почты, в этом поле введите номер телефона + @u.ua</h6></td>
                     </tr>
                     <tr>
                         <td><p>email</p></td>
@@ -51,7 +46,7 @@
                         <td>{{ form.city}}</td>
                     </tr>
                 </table>
-                <p><input class="btn btn-primary px-3" type="submit" value="Оставить заказ"></p>
+                <p><input class="btn btn-primary px-3" type="submit" value="Залишити форму"></p>
                 {% csrf_token %}
             </form>
         </div>
