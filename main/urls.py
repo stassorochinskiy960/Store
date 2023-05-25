@@ -27,6 +27,7 @@ urlpatterns = [
     path('shop/', include('shop.urls', namespace='shop')),
     path('contact/', views.contact, name='contact'),
     path('', views.index, name='index'),
+    path('blog/', include('blog.urls', namespace='blog')),
 ]
 # path('shop/', include(('shop.urls', 'shop'), namespace='shop')),
 if settings.DEBUG:

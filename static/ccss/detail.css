@@ -1,0 +1,13 @@
+.center {
+    text-align: center;
+}
+
+.verse {
+    display: table;
+    margin: 0 auto;
+    /* для центрирования display: table; не нужно указывать ширину блока, она рассчитывается самостоятельно */
+    white-space: pre-line;
+    /* не нужен <br> */
+    word-wrap: break-word;
+    /* чтобы слова переносились на маленьком экране */
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block container %}
+    <div class="center">
+        <h1>{{ post.title }}</h1>
+        <p class="date">
+            Published {{ post.publish }} by {{ post.author }}
+        </p>
+        <p class="verse">
+            {{ post.body|linebreaks }}
+        </p>
+    </div>
+{% endblock %}

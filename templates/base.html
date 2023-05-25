@@ -29,6 +29,8 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/item.css' %}" rel="stylesheet">
+    <link href="{% static 'ccss/list.css' %}" rel="stylesheet">
+    <link href="{% static 'ccss/detail.css' %}" rel="stylesheet">
 
 
 
@@ -71,20 +73,8 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="/" class="nav-item nav-link ">Главная</a> <! -- active -->
                             <a href="{% url 'shop:product_list' %}" class="nav-item nav-link">Магазин</a>
+                            <a href="{% url 'blog:post_list' %}" class="nav-item nav-link">Blog</a>
                             <a href="{% url 'contact' %}" class="nav-item nav-link">Связь с нами</a>
-                        </div>
-                        <div class="" style="color:white"> <!-- cart -->
-                            {% with total_items=cart|length %}
-                                {% if cart|length > 0 %}
-                                    Ваша корзина:                  <!--Your cart-->
-                                    <a style="color:yellow" href="{% url 'cart:cart_detail' %}">
-                                        выбрано: {{ total_items }},          <!--item--><!--total_items|pluralize-->
-                                        сумма: ₴{{ cart.get_total_price }}
-                                    </a>
-                                {% else %}
-                                    Ваша корзина пуста.         <!--Your cart is empty.-->
-                                {% endif %}
-                            {% endwith %}
                         </div>
                     </div>
                 </nav>
