@@ -13,3 +13,9 @@
     word-wrap: break-word;
     /* чтобы слова переносились на маленьком экране */
 }
+
+.comment {
+    color: black;
+}
+
+.info {}

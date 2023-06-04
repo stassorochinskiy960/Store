@@ -135,3 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
 
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'stassorochinskiy960@gmail.com'
+EMAIL_HOST_PASSWORD = '5'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

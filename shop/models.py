@@ -34,8 +34,8 @@ class Product(models.Model):
     class Meta:
         ordering = ('name',)
         index_together = (('id', 'slug'),)
-        verbose_name = 'Подія'
-        verbose_name_plural = 'Події'
+        verbose_name = 'Івент'
+        verbose_name_plural = 'Івенти'
 
     def __str__(self):
         return self.name

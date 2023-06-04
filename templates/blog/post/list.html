@@ -4,7 +4,19 @@
 {% block title %}My Blog{% endblock %}
 
 {% block container %}
-    <h1 class="news">News</h1>
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30 good">
+                    <a class="breadcrumb-item text-dark" href="/">Головна</a>
+                    <span class="breadcrumb-item active">Статті</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+    <h1 class="news"></h1>
     {% for post in posts %}
         <div class="layer1">
             <h2>
